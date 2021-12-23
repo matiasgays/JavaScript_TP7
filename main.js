@@ -76,8 +76,9 @@ function mostrarProductos(){
     for (let i = 0; i < localStorage.length; i++) {
         let li = document.createElement('li');
         let clave = localStorage.key[i];
-        let productoComprado = (JSON.parse(localStorage.getItem(`${clave}`)));
-        li.innerText = `${productoComprado.vehiculo}`;
+        let productoComprado = JSON.parse(localStorage.getItem(`${clave}`));
+        liText = document.createTextNode(`${productoComprado.vehiculo}`);
+        li.appendChild(listaCompras);
         listaCompras.appendChild(li);
     }
 }
